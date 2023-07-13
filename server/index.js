@@ -3,7 +3,7 @@ import cors from 'cors';
 import generate from "./generate.js";
 
 const app = express();
-app.use(cors({origin:""}));
+app.use(cors({origin:"*"}));
 const port = process.env.PORT || 3005;
 app.use(express.json())
 
@@ -23,6 +23,7 @@ app.post('/generate', async (req, res) => {
     }
 
 })
+
 
 app.listen(port, () => {
     console.log(`Server is running on ${port}`)
