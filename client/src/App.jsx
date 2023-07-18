@@ -1,5 +1,6 @@
 import styles from "./index.module.css";
 import sqlServer from "./assets/sql-server.png";
+import logo from "./assets/neuralogo.png";
 import "./App.css";
 import { useState } from "react";
 
@@ -17,8 +18,8 @@ function App() {
   const generateQuery = async () => {
     const response = await fetch('http://localhost:3005/generate', {
       method: "POST",
-      headers: {"Content-Type": 'application/json'},
-      body: JSON.stringify({queryDescription: queryDescription})
+      headers: { "Content-Type": 'application/json' },
+      body: JSON.stringify({ queryDescription: queryDescription })
     })
 
     const data = await response.json()
@@ -31,15 +32,38 @@ function App() {
       <h3>Generate SQL with AI</h3>
 
       <form action="" onSubmit={onSubmit}>
-        <input
+
+        {/* <input
           type="text"
           name="query-description"
+          class="input"
           placeholder="Describe your query"
           onChange={(e) => setQueryDescription(e.target.value)}
-        />
-        <input type="submit" value="Generate query" />
-        <pre>{sqlQuery}</pre>
+          
+        /> */}
+        <div class="input-wrapper">
+
+  <input placeholder="" class="newinput" name="text" type="text" onChange={(e) => setQueryDescription(e.target.value)}/>
+</div>
+
+
+        <button class="button">
+          Generate
+          <div class="hoverEffect">
+            <div>
+
+            </div>
+          </div></button>
+
+
+
+        <div class="output" placeholder="Your Output Here">
+        
+          {sqlQuery}
+        </div>
       </form>
+
+      <img src={logo} alt="dbimage" className={styles.logo} />
     </main>
   );
 }
