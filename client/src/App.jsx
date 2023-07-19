@@ -1,5 +1,5 @@
 import styles from "./index.module.css";
-import sqlServer from "./assets/sql-server.png";
+import sqlServer from "./assets/brainblck-04.png";
 import logo from "./assets/neuralogo.png";
 import "./App.css";
 import { useState } from "react";
@@ -27,27 +27,25 @@ function App() {
   }
 
   return (
+
     <main className={styles.main}>
+
       <img src={sqlServer} alt="dbimage" className={styles.icon} />
-      <h3>Generate SQL with AI</h3>
+      <h3>Neura SQL-Gen</h3>
 
       <form action="" onSubmit={onSubmit}>
 
-        {/* <input
+        <input
           type="text"
           name="query-description"
           class="input"
           placeholder="Describe your query"
           onChange={(e) => setQueryDescription(e.target.value)}
-          
-        /> */}
-        <div class="input-wrapper">
 
-  <input placeholder="" class="newinput" name="text" type="text" onChange={(e) => setQueryDescription(e.target.value)}/>
-</div>
+        />
 
 
-        <button class="button">
+        <button class="button" type="submit">
           Generate
           <div class="hoverEffect">
             <div>
@@ -56,11 +54,20 @@ function App() {
           </div></button>
 
 
-
+        
         <div class="output" placeholder="Your Output Here">
         
           {sqlQuery}
+          
         </div>
+        {/* <div class="output">
+        <div class="card">
+          {sqlQuery}
+          <div class="overlay"></div>
+          <button class="card-btn">Copy</button>
+        </div>
+        </div> */}
+
       </form>
 
       <img src={logo} alt="dbimage" className={styles.logo} />
