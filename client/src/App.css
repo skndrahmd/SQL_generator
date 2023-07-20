@@ -79,6 +79,15 @@
   
 
 }
+.sparkle {
+  fill: #7e7e7e;
+  transition: all 800ms ease;
+  padding-left: 10px;
+}
+.button:hover .sparkle {
+  fill: rgb(0, 0, 0);
+  transform: scale(1.1);
+} 
 /* .input{
   color: black;
   border: 2px solid #d6abff !important;
@@ -95,7 +104,9 @@
 
 } */
 
-
+.input{
+  padding-top:12px 12px !important;
+}
  .output{
   padding: 20px 20px;
   margin-top:1.5vw;
@@ -103,7 +114,7 @@
   font-weight: 400;
   font-size: 1rem;
   text-align: center;
-  background: linear-gradient(135deg, #9154c7 0%, #54c7b4 100%);
+  background: linear-gradient(135deg,rgb(214, 135, 162) 0%, #9154c7 , #67c4b6 100%);
   border-radius: 7px;
   font-family:'Montserrat';
   cursor:grabbing;
@@ -120,7 +131,7 @@ transform: scale(1.1);
   /* remove */
 
 }
-.card:empty{
+.output:empty{
   display:none !important;
 }
 @keyframes effect {
